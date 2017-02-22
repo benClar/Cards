@@ -6,9 +6,13 @@ import java.util.List;
 
 public class Deck {
 
-    private List<Card> Cards;
+    private List<Card> cards;
 
-    public Deck (List cards){
-         Cards = cards;
+    public Deck (List<Card> _cards){
+         cards = _cards;
+    }
+
+    public List<Card> getCards(){
+        return this.cards;
     }
 }

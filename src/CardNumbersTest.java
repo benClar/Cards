@@ -11,7 +11,7 @@ public class CardNumbersTest {
 
     @Test
     public void enumToInt(){
-        assertEquals(CardNumbers.TWO.getValue(), 2);
+        assertEquals(CardNumber.TWO.getValue(), 2);
     }
 
 }
