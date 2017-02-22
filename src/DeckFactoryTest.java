@@ -1,3 +1,4 @@
+import org.junit.Assert;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
@@ -14,6 +15,23 @@ public class DeckFactoryTest {
         for(Card c : d.getCards()){
             assertEquals(c, null);
         }
+        assertEquals(d.getDeckSize(), 0);
+
     }
 
+    @Test
+    public void testCreateShuffledDeck(){
+        DeckFactory df =  DeckFactory.getInstance();
+        Deck d = df.createShuffledDeck();
+        d.getCards().forEach((Card c) -> assertNotNull(c));
+        assertEquals(d.getDeckSize(), 52);
+    }
+
+    @Test
+    public void testCreateSortedDeck(){
+        DeckFactory df =  DeckFactory.getInstance();
+        Deck d = df.createSortedDeck();
+        d.getCards().forEach((Card c) -> assertNotNull(c));
+        assertEquals(d.getDeckSize(), 52);
+    }
 }

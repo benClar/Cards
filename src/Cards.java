@@ -3,7 +3,9 @@
  */
 public class Cards {
     public static void main(String[] args){
-
-        System.out.println("hello World!");
+        Dealer d = new StandardDealer();
+        Deck shuffled = DeckFactory.getInstance().createShuffledDeck();
+        d.sort(shuffled);
+        shuffled.getCards().forEach(System.out::println);
     }
 }
