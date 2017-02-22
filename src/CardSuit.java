@@ -18,4 +18,5 @@ public enum CardSuit {
     public int getValue(){
         return this.value;
     }
+
 }

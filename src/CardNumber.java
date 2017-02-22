@@ -14,4 +14,16 @@ public enum CardNumber {
         return this.value;
     }
 
+    public static CardNumber createCardFromInt(int i){
+        if(i < 1 || i > 13){
+            throw new IllegalArgumentException("Cards can only have value between 1 and 13");
+        }
+        for(CardNumber c: CardNumber.values()) {
+            if (c.getValue() == i) {
+                return c;
+            }
+        }
+        throw new IllegalStateException(String.format("Card value not found for supplied int %d",i));
+    }
+
 }
